@@ -1,9 +1,9 @@
-package UserServlet;
+package servlet.UserServlet;
 
 import javaBean.Err;
 import javaBean.User;
 import net.sf.json.JSONObject;
-import userService.UserService;
+import service.userService.UserService;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;

@@ -6,50 +6,50 @@
 
     <servlet>
         <servlet-name>UserLogin</servlet-name>
-        <servlet-class>UserServlet.UserLogin</servlet-class>
+        <servlet-class>servlet.UserServlet.UserLogin</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>IsOnline</servlet-name>
-        <servlet-class>UserServlet.IsOnline</servlet-class>
+        <servlet-class>servlet.UserServlet.IsOnline</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UserExit</servlet-name>
-        <servlet-class>UserServlet.UserExit</servlet-class>
+        <servlet-class>servlet.UserServlet.UserExit</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UserReg</servlet-name>
-        <servlet-class>UserServlet.UserReg</servlet-class>
+        <servlet-class>servlet.UserServlet.UserReg</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UpdatePassword</servlet-name>
-        <servlet-class>UserServlet.UpdatePassword</servlet-class>
+        <servlet-class>servlet.UserServlet.UpdatePassword</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UpdateSignature</servlet-name>
-        <servlet-class>UserServlet.UpdateSignature</servlet-class>
+        <servlet-class>servlet.UserServlet.UpdateSignature</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserLogin</servlet-name>
-        <url-pattern>/UserServlet/UserLogin</url-pattern>
+        <url-pattern>/servlet.UserServlet/UserLogin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>IsOnline</servlet-name>
-        <url-pattern>/UserServlet/IsOnline</url-pattern>
+        <url-pattern>/servlet.UserServlet/IsOnline</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UserExit</servlet-name>
-        <url-pattern>/UserServlet/UserExit</url-pattern>
+        <url-pattern>/servlet.UserServlet/UserExit</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UserReg</servlet-name>
-        <url-pattern>/UserServlet/UserReg</url-pattern>
+        <url-pattern>/servlet.UserServlet/UserReg</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UpdatePassword</servlet-name>
-        <url-pattern>/UserServlet/UpdatePassword</url-pattern>
+        <url-pattern>/servlet.UserServlet/UpdatePassword</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UpdateSignature</servlet-name>
-        <url-pattern>/UserServlet/UpdateSignature</url-pattern>
+        <url-pattern>/servlet.UserServlet/UpdateSignature</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -1,11 +1,10 @@
-package UserServlet;
+package servlet.UserServlet;
 
 import javaBean.Err;
-import javaBean.User;
 import net.sf.json.JSONObject;
-import userService.UserService;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,23 +12,21 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class UpdateSignature extends HttpServlet {
+@WebServlet(name = "UserExit")
+public class UserExit extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json;charset=UTF-8");
         PrintWriter out=response.getWriter();
         HttpSession session=request.getSession(true);
-        UserService userService=new UserService();
-        String signature=request.getParameter("signature");
-        User user=new User();
         Err err=new Err();
-        if(session.getAttribute("username")==null){
-            err.setErrno(3);
-            err.setErrmsg("会话超时，请重新登录");
-        }else {
-            user.setUsername(session.getAttribute("username").toString());
-            user.setSignature(signature);
-            err=userService.updateSignature(user);
+        if(session.getAttribute("username")!=null){
+            session.removeAttribute("username");
+            err.setErrno(0);
+            err.setErrmsg("成功退出");
+        }else{
+            err.setErrno(1);
+            err.setErrmsg("用户状态异常");
         }
         out.println(JSONObject.fromObject(err));
         out.flush();

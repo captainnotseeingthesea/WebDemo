@@ -8,12 +8,12 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package userService;
+package service.userService;
 
 import encrypt.EncryptPassword;
 import javaBean.Err;
 import javaBean.User;
-import userControl.UserControl;
+import control.userControl.UserControl;
 
 import java.sql.SQLException;
 import java.util.regex.Pattern;
@@ -255,8 +255,8 @@ public class UserService {
         user.setUsername("李东初");
         user.setPassword("ldc123456");
         user.setSignature("");
-        //Err err=userService.userReg(user,"ldc123456");
-        //Err err=userService.userLogin(user);
+        //Err err=service.userService.userReg(user,"ldc123456");
+        //Err err=service.userService.userLogin(user);
         Err err=userService.updateSignature(user);
         System.out.println(err.getErrno()+" "+err.getErrmsg());
     }
