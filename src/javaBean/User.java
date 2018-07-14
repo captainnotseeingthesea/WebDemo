@@ -1,6 +1,6 @@
-/**
+package javaBean; /**
  * Copyright (C), 2015-2018, 华电408有限公司
- * FileName: user
+ * FileName: javaBean.User
  * Author:   宣佚
  * Date:     2018/6/16 0016 下午 21:38
  * Description: 用户JavaBean
@@ -17,10 +17,20 @@
  * @create 2018/6/16 0016
  * @since 1.0.0
  */
-public class user {
+public class User {
     private String username;//用户名
     private String password;//用户密码
     private int id;//用户id号
+
+    public String getSignature() {
+        return signature;
+    }
+
+    public void setSignature(String signature) {
+        this.signature = signature;
+    }
+
+    private String signature;//用户的个性签名
 
     public String getUsername() {
         return username;
