@@ -28,6 +28,58 @@
         <servlet-name>UpdateSignature</servlet-name>
         <servlet-class>servlet.UserServlet.UpdateSignature</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DisplayPaymentClass</servlet-name>
+        <servlet-class>servlet.classServlet.DisplayPaymentClass</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DisplayIncomeClass</servlet-name>
+        <servlet-class>servlet.classServlet.DisplayIncomeClass</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewPaymentClass</servlet-name>
+        <servlet-class>servlet.classServlet.NewPaymentClass</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewIncomeClass</servlet-name>
+        <servlet-class>servlet.classServlet.NewIncomeClass</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteIncomeClass</servlet-name>
+        <servlet-class>servlet.classServlet.DeleteIncomeClass</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeletePaymentClass</servlet-name>
+        <servlet-class>servlet.classServlet.DeletePaymentClass</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateIncomeClass</servlet-name>
+        <servlet-class>servlet.classServlet.UpdateIncomeClass</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdatePaymentClass</servlet-name>
+        <servlet-class>servlet.classServlet.UpdatePaymentClass</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewPayment</servlet-name>
+        <servlet-class>servlet.itemServlet.NewPayment</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewIncome</servlet-name>
+        <servlet-class>servlet.itemServlet.NewIncome</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DisplayItems</servlet-name>
+        <servlet-class>servlet.itemServlet.DisplayItems</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateItems</servlet-name>
+        <servlet-class>servlet.itemServlet.UpdateItems</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteItems</servlet-name>
+        <servlet-class>servlet.itemServlet.DeleteItems</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserLogin</servlet-name>
         <url-pattern>/servlet.UserServlet/UserLogin</url-pattern>
@@ -51,5 +103,57 @@
     <servlet-mapping>
         <servlet-name>UpdateSignature</servlet-name>
         <url-pattern>/servlet.UserServlet/UpdateSignature</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayPaymentClass</servlet-name>
+        <url-pattern>/servlet.classServlet/DisplayPaymentClass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayIncomeClass</servlet-name>
+        <url-pattern>/servlet.classServlet/DisplayIncomeClass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewPaymentClass</servlet-name>
+        <url-pattern>/servlet.classServlet/NewPaymentClass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewIncomeClass</servlet-name>
+        <url-pattern>/servlet.classServlet/NewIncomeClass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteIncomeClass</servlet-name>
+        <url-pattern>/servlet.classServlet/DeleteIncomeClass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletePaymentClass</servlet-name>
+        <url-pattern>/servlet.classServlet/DeletePaymentClass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateIncomeClass</servlet-name>
+        <url-pattern>/servlet.classServlet/UpdateIncomeClass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdatePaymentClass</servlet-name>
+        <url-pattern>/servlet.classServlet/UpdatePaymentClass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewPayment</servlet-name>
+        <url-pattern>/servlet.itemServlet/NewPayment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewIncome</servlet-name>
+        <url-pattern>/servlet.itemServlet/NewIncome</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayItems</servlet-name>
+        <url-pattern>/servlet.itemServlet/DisplayItems</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateItems</servlet-name>
+        <url-pattern>/servlet.itemServlet/UpdateItems</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteItems</servlet-name>
+        <url-pattern>/servlet.itemServlet/DeleteItems</url-pattern>
     </servlet-mapping>
 </web-app>

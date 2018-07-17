@@ -109,6 +109,31 @@ public class IncomeClassControl {
            }
            return null;
        }
+/**
+ * 功能描述: <br>
+ * 〈根据指定id号查询收入种类〉
+ *
+ * @param incomeClass
+ * @return:incomeClass
+ * @since: 1.0.0
+ * @Author:宣佚
+ * @Date: 2018/7/15 0015 下午 14:17
+ */
+       public IncomeClass queryClassById(IncomeClass incomeClass)throws SQLException{
+           Connection conn=DBHelper.getConnection();
+           String sql="SELECT className,userId FROM incomeClass WHERE id=?";
+           PreparedStatement ptmt=conn.prepareStatement(sql);
+           ptmt.setInt(1,incomeClass.getId());
+           ResultSet rs=ptmt.executeQuery();
+           if(rs.next()){
+               IncomeClass incomeClass_query=new IncomeClass();
+               incomeClass_query.setClassName(rs.getString("className"));
+               incomeClass_query.setUserId(rs.getInt("userId"));
+               incomeClass_query.setId(incomeClass.getId());
+               return incomeClass_query;
+           }
+           return null;
+       }
        /**
         * 功能描述: <br>
         * 〈查询指定用户的所有收入类别〉

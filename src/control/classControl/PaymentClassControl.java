@@ -110,6 +110,31 @@ public class PaymentClassControl {
     }
     /**
      * 功能描述: <br>
+     * 〈根据指定id查询支出种类〉
+     *
+     * @param paymentClass
+     * @return:paymentClass
+     * @since: 1.0.0
+     * @Author:宣佚
+     * @Date: 2018/7/15 0015 上午 10:15
+     */
+    public PaymentClass queryClassById(PaymentClass paymentClass)throws SQLException{
+        Connection conn=DBHelper.getConnection();
+        String sql="SELECT className,userId FROM paymentClass WHERE id=?";
+        PreparedStatement ptmt=conn.prepareStatement(sql);
+        ptmt.setInt(1,paymentClass.getId());
+        ResultSet rs=ptmt.executeQuery();
+        if(rs.next()){
+            PaymentClass paymentClass_query=new PaymentClass();
+            paymentClass_query.setUserId(rs.getInt("userId"));
+            paymentClass_query.setClassName(rs.getString("className"));
+            paymentClass_query.setId(paymentClass.getId());
+            return paymentClass_query;
+        }
+        return null;
+    }
+    /**
+     * 功能描述: <br>
      * 〈查询指定用户的支出类别〉
      *
      * @param user
@@ -157,8 +182,8 @@ public class PaymentClassControl {
         user.setSignature("李宣佚好帅");
         try {
             /*paymentClassControl.addClass(paymentClass);
-            ArrayList<PaymentClass>arrayList=paymentClassControl.queryAllClass(user);
-            for (PaymentClass p:arrayList) {
+            ArrayList<PaymentClassService>arrayList=paymentClassControl.queryAllClass(user);
+            for (PaymentClassService p:arrayList) {
                 System.out.println(p.getClassName()+" "+p.getId()+" "+ p.getUserId());
             }*/
             PaymentClass p=paymentClassControl.queryClass(paymentClass);

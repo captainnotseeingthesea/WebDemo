@@ -60,12 +60,13 @@ public class UserControl {
     public User queryUser(User user)throws SQLException{
         Connection conn=DBHelper.getConnection();
         User query_user=new User();
-        String sql="SELECT password,signature FROM user WHERE username=?";
+        String sql="SELECT id,password,signature FROM user WHERE username=?";
         PreparedStatement ptmt=conn.prepareStatement(sql);
         ptmt.setString(1,user.getUsername());
         ResultSet rs=ptmt.executeQuery();
         if(rs.next()){
             query_user.setUsername(user.getUsername());
+            query_user.setId(rs.getInt("id"));
             query_user.setPassword(rs.getString("password"));
             query_user.setSignature(rs.getString("signature"));
             return query_user;

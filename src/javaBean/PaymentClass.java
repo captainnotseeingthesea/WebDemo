@@ -1,6 +1,6 @@
 /**
  * Copyright (C), 2015-2018, 华电408有限公司
- * FileName: PaymentClass
+ * FileName: PaymentClassService
  * Author:   宣佚
  * Date:     2018/7/14 0014 上午 8:11
  * Description: 支出类别

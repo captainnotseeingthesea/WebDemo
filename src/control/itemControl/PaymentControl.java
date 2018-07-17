@@ -12,10 +12,13 @@ package control.itemControl;
 
 import database.DBHelper;
 import javaBean.Payment;
+import javaBean.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -38,7 +41,7 @@ public class PaymentControl {
      */
     public void addPayment(Payment payment)throws SQLException {
         Connection conn=DBHelper.getConnection();
-        String sql="INSERT INTO payment (classId,money,paytime,userId)VALUES(?,?,?)";
+        String sql="INSERT INTO payment (classId,money,paytime,userId)VALUES(?,?,?,?)";
         PreparedStatement ptmt=conn.prepareStatement(sql);
         ptmt.setInt(1,payment.getClassId());
         ptmt.setDouble(2,payment.getMoney());
@@ -83,7 +86,34 @@ public class PaymentControl {
         ptmt.setInt(4,payment.getId());
         ptmt.execute();
     }
-
+/**
+ * 功能描述: <br>
+ * 〈查询指定用户的全部的支出条目〉
+ *
+ * @param user
+ * @return:arraylist
+ * @since: 1.0.0
+ * @Author:宣佚
+ * @Date: 2018/7/16 0016 下午 14:52
+ */
+    public ArrayList<Payment> queryAllItems(User user)throws SQLException{
+        Connection conn=DBHelper.getConnection();
+        String sql="SELECT id,classId,money,payTime FROM payment WHERE userId=? AND mark=0";
+        PreparedStatement ptmt=conn.prepareStatement(sql);
+        ptmt.setInt(1,user.getId());
+        ResultSet rs=ptmt.executeQuery();
+        ArrayList<Payment>arrayList=new ArrayList<Payment>();
+        while(rs.next()){
+            Payment payment=new Payment();
+            payment.setId(rs.getInt("id"));
+            payment.setClassId(rs.getInt("classId"));
+            payment.setMoney(rs.getDouble("money"));
+            payment.setPayTime(rs.getString("payTime"));
+            payment.setUserId(user.getId());
+            arrayList.add(payment);
+        }
+        return arrayList;
+    }
 
     public static void main(String args[]){
         PaymentControl paymentControl=new PaymentControl();
